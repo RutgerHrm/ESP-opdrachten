@@ -70,16 +70,18 @@ int counter = 0;
 
 void loop() 
 {
-  delay(1000);
+  delay(1000); //1 seconde
   counter++;
-  if (counter == 10){
+  if (counter == 10){ //als teller op 10sec staat, voer onderstaande code uit
     vTaskSuspend(leds[0].taskh);
     vTaskSuspend(leds[1].taskh);
     vTaskSuspend(leds[2].taskh);
-    delay(3000);
+    
+    delay(3000); //3 seconden interval
+    
     vTaskResume(leds[0].taskh);
     vTaskResume(leds[1].taskh);
     vTaskResume(leds[2].taskh);              
-    counter = 0;
+    counter = 0; //zet teller weer op 0, begin opnieuw!
   }
 }
