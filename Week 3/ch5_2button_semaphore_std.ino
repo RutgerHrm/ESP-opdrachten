@@ -8,6 +8,7 @@
 #define DEBOUNCE_TIME 30 // the debounce time in millisecond, increase this time if it still chatters
 //Declare SemaphoreHandle
 static SemaphoreHandle_t blockled;
+
 //
 // Button Debouncing task:
 //
@@ -53,23 +54,25 @@ lastSteadyState = currentState;
 taskYIELD();
 }
 }
+
 // function blinks GPIO_led_sem in given rate(ms) for 10 times
 void blink_sem_led(int rate){
 //set Semaphore and when done relase the Semaphore
-  if( xSemaphoreTake( blockled, ( TickType_t ) 0 ) )
-  {
-    int count = 0;
-    printf("BLINK_SEM_LED, rate: %d\r\n",rate );
-    while (count<10){
-      digitalWrite(GPIO_LED_SEM,HIGH);
-      delay(rate);
-      digitalWrite(GPIO_LED_SEM,LOW);
-      delay(rate);
-      count++;
-    }
+if( xSemaphoreTake( blockled, ( TickType_t ) 0 ) )
+{
+int count = 0;
+printf("BLINK_SEM_LED, rate: %d\r\n",rate );
+while (count<10){
+digitalWrite(GPIO_LED_SEM,HIGH);
+delay(rate);
+digitalWrite(GPIO_LED_SEM,LOW);
+delay(rate);
+count++;
+}
+  
 //free Semaphore
-  xSemaphoreGive(blockled);
-  }
+xSemaphoreGive(blockled);
+}
 }
 //
 // Initialization:
@@ -82,10 +85,9 @@ TaskHandle_t h;
 BaseType_t rc;
 delay(2000); // Allow USB to connect
 // create here binary Semaphore and release the Semaphore
-  blockled = xSemaphoreCreateBinary();
+blockled = xSemaphoreCreateBinary();
 // free binarys semaphore........
-  xSemaphoreGive(blockled);
-
+xSemaphoreGive(blockled);
 pinMode(GPIO_LED_SEM,OUTPUT);
 pinMode(GPIO_BUTTONL,INPUT_PULLUP);
 pinMode(GPIO_BUTTONR,INPUT_PULLUP);
