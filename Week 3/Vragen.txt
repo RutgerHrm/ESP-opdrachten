@@ -1,0 +1,7 @@
+Exercises
+5. What is the initial state of a binary semaphore? Empty or given?
+
+6. What is the initial state of a counting semaphore?
+
+7. How does the counting semaphore prevent a deadlock in the dining philosophers 
+problem?
