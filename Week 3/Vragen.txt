@@ -1,7 +1,40 @@
-Exercises
+Exercises H5
 5. What is the initial state of a binary semaphore? Empty or given?
 
 6. What is the initial state of a counting semaphore?
 
 7. How does the counting semaphore prevent a deadlock in the dining philosophers 
 problem?
+
+---------------------------------------------------------------------------------------------
+
+Exercises H7
+1. What is the most urgent and least urgent priority for the ESP32 Arduino?
+
+2. Do you need to call vTaskStartScheduler() for Arduino?
+
+3. When does the FreeRTOS scheduler get invoked in the course of a program’s 
+execution?
+
+4. What kind of scheduling occurs among tasks of equal priority?
+
+5. How do you create a ready-to-go task and unleash it only when it is time for it to 
+start?
+
+6. What causes the execution of a task to be pre-empted?
+
+7. On the ESP32, what is the maximum time slice in ms?
+
+8. When does less than a full-time slice occur?
+
+9. Is the call to taskYIELD() a blocking call? Why or why not?
+
+10. Is the call to the Arduino delay() (or FreeRTOS vTaskDelay()) a blocking call? Why or 
+why not?
+
+11. How do you invoke the FreeRTOS scheduler directly?
+
+12. How does a task become CPU starved?
+
+13. Does a call to taskYIELD() ever result in a higher priority task running? Why or why 
+not?
