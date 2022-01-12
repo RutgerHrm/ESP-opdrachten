@@ -1,0 +1,22 @@
+Exercises
+1. How does a binary semaphore synchronize tasks?
+
+2. If task A has binary semaphore 1 taken and task B has binary semaphore 2 taken, is 
+there a deadlock?
+
+3. What is another commonly used name for a deadlock?
+
+4. Can a binary semaphore unblock multiple tasks?
+
+5. What is the initial state of a binary semaphore? Empty or given?
+
+6. What is the initial state of a counting semaphore?
+
+7. How does the counting semaphore prevent a deadlock in the dining philosophers 
+problem?
+
+8. Does giving a counting semaphore increase or decrease the count?
+
+9. Which initial counting semaphore value indicates that all resources are initially taken?
+
+10. How many states does the binary semaphore have?
