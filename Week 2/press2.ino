@@ -10,9 +10,9 @@
 //
 
 // LED is active high
-#define GPIO_LED      3
+#define GPIO_LED      15
 #define GPIO_BUTTONL  19
-#define GPIO_BUTTONR  26
+#define GPIO_BUTTONR  21
 
 // contants for SNTP client
 const char* ntpServer = "nl.pool.ntp.org";
