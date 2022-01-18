@@ -1,0 +1,17 @@
+2. Why is it a bad idea to call routines like printf, snprintf() etc.?
+Ze zijn heel veel stack ruimte nodig
+
+3. Name the reason why malloc() or free() should never be called from an ISR.
+Omdat ze gebruik maken van verschillende lijststructuren, deze kunnen vervolgens door de war gehaald worden.
+
+4. What stack does the ISR stack frame get allocated from?
+CONFIG_FREERTOS_ISR_STACKSIZE
+
+5. What factors reduce the maximum stack space available for an ISR?
+Iedere wachtende ISR aanroep
+
+8. How is the task scheduler invoked from within an ISR?
+Met portYIELD_FROM_ISR() 
+
+15. Is it permissible to call delay() from within an ISR?
+Nee, deze call blockt.
